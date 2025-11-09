@@ -45,3 +45,6 @@ Firebase Firestore
 Firebase Authentication (email + password for teachers)
 
 Firebase Admin SDK
+
+### Firebase Key Setup
+Create a `firebase_key.json` file in the project root using your Firebase service account credentials.
