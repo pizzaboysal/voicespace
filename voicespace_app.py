@@ -2,20 +2,14 @@ import streamlit as st
 from firebase_config import db  # Firestore instance
 from datetime import datetime
 
-# ===============================
-# --- PAGE SETUP ---
-# ===============================
+# page setup
 st.set_page_config(page_title="VoiceSpace — Anonymous Feedback", layout="wide")
 
-# ===============================
-# --- SESSION STATE ---
-# ===============================
+# session state
 if "teacher_user" not in st.session_state:
     st.session_state.teacher_user = None  # Stores logged-in teacher info
 
-# ===============================
-# --- STYLES ---
-# ===============================
+# styles
 st.markdown("""
 <style>
 body { font-family: 'Roboto', sans-serif; 
@@ -39,15 +33,11 @@ body { font-family: 'Roboto', sans-serif;
 </style>
 """, unsafe_allow_html=True)
 
-# ===============================
-# --- DISPLAY LOGGED-IN TEACHER ---
-# ===============================
+# Display logged in teacher
 if st.session_state.teacher_user:
     st.markdown(f'<div class="top-right">Logged in as: {st.session_state.teacher_user["email"]}</div>', unsafe_allow_html=True)
 
-# ===============================
-# --- SIDEBAR NAVIGATION (Clean Big Buttons) ---
-# ===============================
+# Sidebar Navigation
 st.sidebar.title("VoiceSpace")
 
 # CSS for nicer buttons
@@ -100,9 +90,7 @@ page = st.session_state.page
 
 
 
-# ===============================
-# --- HEADER ---
-# ===============================
+# Header
 st.markdown("""
 <div style="background-color: rgba(44, 62, 80, 0.9); padding:30px; border-radius:10px;">
     <h1>VoiceSpace</h1>
@@ -113,9 +101,7 @@ st.markdown("""
 
 st.markdown("---")
 
-# ===============================
-# --- STUDENT FEEDBACK PAGE ---
-# ===============================
+# Student Feedback Page
 if page == "Submit Feedback":
     st.image("https://img.icons8.com/ios/50/1ABC9C/edit.png", width=50)
     st.subheader("Submit Anonymous Feedback")
@@ -135,7 +121,7 @@ if page == "Submit Feedback":
 
         if st.button("Submit Message"):
             if not message.strip():
-                st.warning("⚠️ Please write a message before submitting.")
+                st.warning("Please write a message before submitting.")
             else:
                 db.collection("anonymous_messages").document().set({
                     "teacher_id": selected_teacher_id,
@@ -143,13 +129,11 @@ if page == "Submit Feedback":
                     "message": message,
                     "created_at": datetime.utcnow()
                 })
-                st.success("✅ Your feedback has been submitted anonymously.")
+                st.success("Your feedback has been submitted anonymously.")
     else:
-        st.warning("⚠️ No teachers available yet. Ask your teacher to create an account first.")
+        st.warning("No teachers available yet. Ask your teacher to create an account first.")
 
-# ===============================
-# --- TEACHER DASHBOARD PAGE ---
-# ===============================
+# Teacher Dashboard Page
 elif page == "Teacher/Administrator Dashboard":
     st.image("https://img.icons8.com/ios/50/1ABC9C/teacher.png", width=50)
     st.subheader("Teacher/Administrator Dashboard")
@@ -174,23 +158,22 @@ elif page == "Teacher/Administrator Dashboard":
                         user_doc = db.collection("teachers").document()
                         user_doc.set({
                             "email": email,
-                            "password": password,  # Plaintext for simplicity (can hash later)
-                            "name": email.split("@")[0],
+                            "password": password,  # Plaintext for simplicity
                             "uid": user_doc.id,
                             "created_at": datetime.utcnow()
                         })
-                        st.success("✅ Account created! You are now logged in.")
+                        st.success("Account created! You are now logged in.")
                         st.session_state.teacher_user = {"email": email, "id": user_doc.id}
                 elif action == "Login":
                     # Find matching teacher
                     teachers_query = db.collection("teachers").where("email", "==", email).where("password", "==", password).stream()
                     teacher_list = list(teachers_query)
                     if teacher_list:
-                        st.success("✅ Logged in successfully.")
+                        st.success("Logged in successfully.")
                         teacher_doc = teacher_list[0]
                         st.session_state.teacher_user = {"email": email, "id": teacher_doc.id}
                     else:
-                        st.error("❌ Invalid email or password.")
+                        st.error("Invalid email or password.")
 
     # Display messages if logged in
     if st.session_state.teacher_user:
@@ -203,14 +186,12 @@ elif page == "Teacher/Administrator Dashboard":
             data = msg.to_dict()
             st.markdown(f"**Category:** {data['category']}")
             st.markdown(f"**Message:** {data['message']}")
-            st.markdown(f"📅 Submitted: {data['created_at']}")
+            st.markdown(f"Submitted: {data['created_at']}")
             st.markdown("---")
         if not found:
             st.info("No messages yet.")
 
-# ===============================
-# --- HELP CENTERS PAGE ---
-# ===============================
+# Help Center
 elif page == "Help Centers":
     st.image("https://img.icons8.com/ios/50/1ABC9C/help.png", width=50)
     st.subheader("Help Centers")
