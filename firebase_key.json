@@ -1,13 +1,13 @@
 {
   "type": "service_account",
-  "project_id": "voicespace-ee2a5",
-  "private_key_id": "8598ed8eb6a53640e7009222a0e039f16c2960cb",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDX1DoIN7j70LK/\nDeliMQKVH9Y4d2IQQwHCkIHUbNfsRdyFMlgrYM3cUMuCfR0Qkfnvval5Ns+XXj+8\nIF6U58jvTBfjt4Tqy4YGyCor37eX6xkMN5VuwyUfCnsyJoOq0aFYMNkWfVm1o9Hu\nqxd17zZW+1gFj8aaslLInl/h1WN4Sqpkr2g5YdPCuMiHzVu51G61AUnZzlG6hH3S\nFrwHuSt27vwRB5atZ57M3KuqiaheuRcYurYQj5faxOKg/Bgpr+gpK6npfZL1tPSh\nx4I2m+t87NfaLlNj9mXdVqcfwvaVMkRx4BuXOHdy4jwqsmZMmjxKqThvCQRyTDBj\nILSSFm5pAgMBAAECggEAFA+OW1Aumf1Sd+6nmDBdAJZmd3YlP8Syp6592sxJH5V4\nw0qkJlgHmmhKGjVd27ntxMpYs8MT9YpVmztY/zcyFof4mnpm2NoU+ZFmVhCjxHOe\nLuQFuDdcPm/fdpBc4aY9fHCB5RS+n2L8MtZlRll3MAuJqW6tM5jKmAoceGW4qqf+\nRo4LIl+LWCHRI1ECpVSboKJGx/2gPXJtAHzI2QpMHxKQUsetJuOdZIf3O40utb7S\nPw/sUeMVE4QaFiP+U4JMJDJU2257jERDTjIwzaW2/t8Kci57PeJlZUTPFovT3bRh\n/uRertkeJKBQAoiIKbf7/iZwBufwLjwUvR5pl7YkjwKBgQD0ceVhBSn62xhtarJ5\nkQK1w9wuFcUFKEAT3EyRKdySIclP7pZOAV/veWhyUw8d03bj8B10/EYURqDddae/\n8u7jb1NiQFW2mlqJj1ToW4zlmkZ+xtOLb+5Om0FoQv1k1g2WhTxXRHN1I3aUkULK\n2JMmvroVlCOGTctAPofST6gCMwKBgQDiCApyGZu7wKQFlexB5p4zWlbpnidsAOoE\nxATnx6UePp0Sbo0bmLqeZ4xbUZ6hXfQYZKQWnsQlkBlHPp2uUxhc2rBqjVdkjUmq\n/rd7NGebePQVEYzxKkf1UL3Lwoe7afJS+BONYu/Vapzx+G739mKrotHxGmYb5mus\nlABM5QpI8wKBgFMey53TELRRfhvutSOrUJ2YLS2qj2Uyi591QL/32R4DyR2aBpgd\n1Y5r3T1KyxAcUQgvJQUbp4TLg3XqxRD7PYou187IC51dHT47c+bTArUsYZ5IY7S9\nae5m0rXuWZXJR7OQOLV//DavyWm5f1nUjS0Wm9YsmmvX1i5RVQQJvBqLAoGAUPvi\nijkEpEOEQQATUxVGz01p4HAq3baCIkz9GPJeBbUXX/g+FIonKwQctMdMl7Jq96Zv\naC9gRbkYZX9YzZG2I+ay2KplioBYyaxTnxAKoxi2EypjnjCw8YMJTY0YRpzSFsoN\nb1XoakW1j7icQbmEZsyCfekgdpSbNY0dgm95vOMCgYEA0Lmp20MkCUytPe/yQ9TT\ny38QRSRkA4mzm7Y/WGFWTpGcTZ1/Eim2vl02kScByg6/BtvDOqzngjVKXvwKmG11\njCATtTlrMrzjo58Bu4/JdnnF+6jTweNu3G1Iaw9eHpvOtsGXbtVYqp3hexa7Mpqs\nFxQtZkj+8q+1IY6NdcHDdSI=\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-fbsvc@voicespace-ee2a5.iam.gserviceaccount.com",
-  "client_id": "106057876359477358553",
+  "project_id": "YOUR_PROJECT_ID",
+  "private_key_id": "YOUR_PRIVATE_KEY_ID",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n",
+  "client_email": "YOUR_CLIENT_EMAIL",
+  "client_id": "YOUR_CLIENT_ID",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40voicespace-ee2a5.iam.gserviceaccount.com",
+  "client_x509_cert_url": "YOUR_CERT_URL",
   "universe_domain": "googleapis.com"
 }
